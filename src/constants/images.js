@@ -2,7 +2,12 @@ import email from '../assets/email.png';
 import mobile from '../assets/mobile.png';
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
+import asus from '../assets/asus.png';
 import api from '../assets/api.png';
+import bgIMG from '../assets/bgIMG.png';
+import bgWhite from '../assets/bgWhite.png';
+import bolt from '../assets/bolt.png';
+import nb from '../assets/nb.png';
 import cpp from '../assets/cpp.png';
 import css from '../assets/css.png';
 import figma from '../assets/figma.png';
@@ -17,6 +22,8 @@ import python from '../assets/python.png';
 import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
+import skype from '../assets/skype.png';
+import spotify from '../assets/spotify.png';
 import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
 
@@ -31,8 +38,17 @@ import money from '../assets/money.png';
 import work from '../assets/work.png';
 
 import circle from '../assets/circle.svg';
+import logo_svg from '../assets/logo.svg';
 
 export default {
+    asus,
+    bgIMG,
+    bgWhite,
+    bolt,
+    nb,
+    skype,
+    spotify,
+    logo_svg,
 	email,
 	mobile,
     adidas,
