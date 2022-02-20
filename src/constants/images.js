@@ -38,7 +38,7 @@ import money from '../assets/money.png';
 import work from '../assets/work.png';
 
 import circle from '../assets/circle.svg';
-import logo_svg from '../assets/logo.svg';
+import logoSVG from '../assets/logo.svg';
 
 export default {
     asus,
@@ -48,7 +48,7 @@ export default {
     nb,
     skype,
     spotify,
-    logo_svg,
+    logoSVG,
 	email,
 	mobile,
     adidas,
