@@ -1,5 +1,7 @@
 import email from '../assets/email.png';
 import mobile from '../assets/mobile.png';
+import adidas from '../assets/adidas.png';
+import amazon from '../assets/amazon.png';
 import api from '../assets/api.png';
 import cpp from '../assets/cpp.png';
 import css from '../assets/css.png';
@@ -33,6 +35,8 @@ import circle from '../assets/circle.svg';
 export default {
 	email,
 	mobile,
+    adidas,
+    amazon,
 	api,
 	cpp,
 	css,
