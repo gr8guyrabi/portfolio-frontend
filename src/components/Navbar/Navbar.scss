@@ -169,3 +169,12 @@
         display: none;
     }
 }
+
+li.app__navbar-links-active {
+    a {
+        color: var(--secondary-color);
+    }
+    div {
+        background-color: var(--secondary-color);
+    }
+}

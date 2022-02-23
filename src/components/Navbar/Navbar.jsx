@@ -1,21 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, createRef, useCallback } from 'react'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 
 import './Navbar.scss'
-import { images } from '../../constants'
+import { images, NAV_LINKS } from '../../constants'
+
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
+    const [currentHash, setCurrentHash] = useState(NAV_LINKS[0])
 
-  return (
+    useEffect(() => {
+        if (window.location.hash === '') {
+            window.location.hash = currentHash
+        } else {
+            setCurrentHash(window.location.hash)
+        }
+    }, [])
+    
+    const hashChangeHandler = () => {
+        setCurrentHash(window.location.hash)
+    }
+
+    useEffect(() => {
+        window.addEventListener('hashchange', hashChangeHandler)
+        return () => {
+            window.removeEventListener('hashchange', hashChangeHandler)
+        }
+    }, [])
+
+    return (
     <nav className="app__navbar">
         <div className="app__navbar-logo">
             <img src={images.logo} alt="logo" />
         </div>
         <ul className="app__navbar-links">
-            {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-                <li key={`link-${item}`} className="app__flex p-text">
+            {NAV_LINKS.map((item, i) => (
+                <li key={`link-${item}`} className={`app__flex p-text ${item} ${currentHash === '#'+item ? 'app__navbar-links-active': ''}`}>
                     <div />
                     <a href={`#${item}`}>{item}</a>
                 </li>
@@ -30,7 +51,7 @@ const Navbar = () => {
                 >
                     <HiX onClick={() => setToggle(false)} />
                     <ul>
-                        {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                        {NAV_LINKS.map((item) => (
                             <li key={item}>
                                 <a href={`#${item}`} onClick={() => setToggle(false)}>{item}</a>
                             </li>

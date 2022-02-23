@@ -33,9 +33,9 @@ const Skills = () => {
 
         <div className='app__skills-container'>
             <motion.div className="app__skills-list">
-                {skills.map((skill, index) => (
+                {skills.map((skill) => (
                     <motion.div
-                        key={skill.name + index}
+                        key={skill._id}
                         whileInView={{ opacity: [0, 1] }}
                         transition={{ duration: 0.5 }}
                         className="app__skills-item app__flex"
@@ -51,7 +51,7 @@ const Skills = () => {
             <motion.div className='app__skills-exp'>
                 {experiences.map((experience, index) => (
                     <motion.div
-                        key={`${experience.name}_${index}`}
+                        key={experience._id}
                         className="app__skills-exp-item"
                     >
                         <div className='app__skills-exp-year'>
@@ -63,18 +63,18 @@ const Skills = () => {
                             {experience.works.map((work, index) => (
                                 <>
                                     <motion.div
-                                    key={`${work.name}_${index}`}
+                                    key={work._id}
                                     whileInView={{ opacity: [0, 1] }}
                                     transition={{ duration: 0.5 }}
                                     data-tip
-                                    data-for={`${work.name}_${index}`}
+                                    data-for={work._id}
                                     className="app__skills-exp-work"
                                     >
                                         <h4 className="bold-text">{work.name}</h4>
                                         <p className='p-text'>{work.company}</p>
                                     </motion.div>
                                     <ReactTooltip
-                                        id={`${work.name}_${index}`}
+                                        id={work._id}
                                         effect="solid"
                                         arrowColor="#fff"
                                         className="skills-tooltip"
